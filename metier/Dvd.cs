@@ -26,5 +26,10 @@ namespace Mediatek86.metier
         public string Realisateur { get => realisateur; }
         public string Synopsis { get => synopsis; }
 
+        public override string ToString()
+        {
+            return base.Titre.ToString();
+        }
+
     }
 }

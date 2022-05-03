@@ -11,7 +11,7 @@ namespace Mediatek86.bdd
         /// Unique instance de la classe
         /// </summary>
         private static BddMySql instance = null;
-        
+
         /// <summary>
         /// objet de connexion à la BDD à partir d'une chaîne de connexion
         /// </summary>
@@ -60,7 +60,7 @@ namespace Mediatek86.bdd
         public void ReqSelect(string stringQuery, Dictionary<string, object> parameters)
         {
             MySqlCommand command;
-            
+
             try
             {
                 command = new MySqlCommand(stringQuery, connection);
@@ -173,7 +173,7 @@ namespace Mediatek86.bdd
         /// </summary>
         private void ErreurGraveBddNonAccessible(Exception e)
         {
-            MessageBox.Show("Base de données non accessibles", "Erreur grave");
+            MessageBox.Show("Base de données non accessible", "Erreur grave");
             Console.WriteLine(e.Message);
             Environment.Exit(1);
         }
