@@ -275,7 +275,7 @@ namespace Mediatek86.vue
             this.label88 = new System.Windows.Forms.Label();
             this.label89 = new System.Windows.Forms.Label();
             this.label90 = new System.Windows.Forms.Label();
-            this.tabCammandesRevues = new System.Windows.Forms.TabPage();
+            this.tabCommandesRevues = new System.Windows.Forms.TabPage();
             this.grpAjtAbonnement = new System.Windows.Forms.GroupBox();
             this.montantRevue = new System.Windows.Forms.NumericUpDown();
             this.label101 = new System.Windows.Forms.Label();
@@ -357,7 +357,7 @@ namespace Mediatek86.vue
             ((System.ComponentModel.ISupportInitialize)(this.dgvDVDListeCommande)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDVDImageCommande)).BeginInit();
-            this.tabCammandesRevues.SuspendLayout();
+            this.tabCommandesRevues.SuspendLayout();
             this.grpAjtAbonnement.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.montantRevue)).BeginInit();
             this.groupBox8.SuspendLayout();
@@ -374,7 +374,7 @@ namespace Mediatek86.vue
             this.dgvLivresListeGestion.Controls.Add(this.tabReceptionRevue);
             this.dgvLivresListeGestion.Controls.Add(this.tabCommandesLivres);
             this.dgvLivresListeGestion.Controls.Add(this.tabCommandesDvd);
-            this.dgvLivresListeGestion.Controls.Add(this.tabCammandesRevues);
+            this.dgvLivresListeGestion.Controls.Add(this.tabCommandesRevues);
             this.dgvLivresListeGestion.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvLivresListeGestion.ItemSize = new System.Drawing.Size(49, 18);
             this.dgvLivresListeGestion.Location = new System.Drawing.Point(0, 0);
@@ -2909,17 +2909,17 @@ namespace Mediatek86.vue
             this.label90.TabIndex = 7;
             this.label90.Text = "Durée :";
             // 
-            // tabCammandesRevues
+            // tabCommandesRevues
             // 
-            this.tabCammandesRevues.Controls.Add(this.grpAjtAbonnement);
-            this.tabCammandesRevues.Controls.Add(this.groupBox8);
-            this.tabCammandesRevues.Controls.Add(this.groupBox3);
-            this.tabCammandesRevues.Location = new System.Drawing.Point(4, 22);
-            this.tabCammandesRevues.Name = "tabCammandesRevues";
-            this.tabCammandesRevues.Size = new System.Drawing.Size(875, 633);
-            this.tabCammandesRevues.TabIndex = 7;
-            this.tabCammandesRevues.Text = "Gestion de Commandes (Revues)";
-            this.tabCammandesRevues.UseVisualStyleBackColor = true;
+            this.tabCommandesRevues.Controls.Add(this.grpAjtAbonnement);
+            this.tabCommandesRevues.Controls.Add(this.groupBox8);
+            this.tabCommandesRevues.Controls.Add(this.groupBox3);
+            this.tabCommandesRevues.Location = new System.Drawing.Point(4, 22);
+            this.tabCommandesRevues.Name = "tabCommandesRevues";
+            this.tabCommandesRevues.Size = new System.Drawing.Size(875, 633);
+            this.tabCommandesRevues.TabIndex = 7;
+            this.tabCommandesRevues.Text = "Gestion de Commandes (Revues)";
+            this.tabCommandesRevues.UseVisualStyleBackColor = true;
             // 
             // grpAjtAbonnement
             // 
@@ -3391,7 +3391,7 @@ namespace Mediatek86.vue
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcbDVDImageCommande)).EndInit();
-            this.tabCammandesRevues.ResumeLayout(false);
+            this.tabCommandesRevues.ResumeLayout(false);
             this.grpAjtAbonnement.ResumeLayout(false);
             this.grpAjtAbonnement.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.montantRevue)).EndInit();
@@ -3557,7 +3557,7 @@ namespace Mediatek86.vue
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.TabPage tabCommandesLivres;
         private System.Windows.Forms.TabPage tabCommandesDvd;
-        private System.Windows.Forms.TabPage tabCammandesRevues;
+        private System.Windows.Forms.TabPage tabCommandesRevues;
         private System.Windows.Forms.GroupBox grpCLivresRecherche;
         private System.Windows.Forms.GroupBox grpAjoutCLivres;
         private System.Windows.Forms.GroupBox grpCLivresSuivi;

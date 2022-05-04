@@ -247,11 +247,11 @@ namespace Mediatek86.controleur
         /// </summary>
         /// <param name="identifiant"></param>
         /// <param name="mdp"></param>
-        /*public Service ControleAuthentification(string identifiant, string mdp)
+        public Service ControleAuthentification(string identifiant, string mdp)
         {
             Service service = Dao.ControleAuthentification(identifiant, mdp);
             return service;
-        }*/
+        }
     }
 }
 

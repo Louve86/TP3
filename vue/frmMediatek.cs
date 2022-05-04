@@ -418,9 +418,9 @@ namespace Mediatek86.vue
             if (service.ServiceInt == 2) //Service pret
             {
                 dgvLivresListeGestion.TabPages.RemoveByKey("tabReceptionRevue");
-                dgvLivresListeGestion.TabPages.RemoveByKey("tabGestionLivres");
-                dgvLivresListeGestion.TabPages.RemoveByKey("tabGestionCmdDvd");
-                dgvLivresListeGestion.TabPages.RemoveByKey("tabGestionCmdRevues");
+                dgvLivresListeGestion.TabPages.RemoveByKey("tabCommandesLivres");
+                dgvLivresListeGestion.TabPages.RemoveByKey("tabCommandesDvd");
+                dgvLivresListeGestion.TabPages.RemoveByKey("tabCommandesRevues");
             }
             lesLivres = controle.GetAllLivres();
             RemplirComboCategorie(controle.GetAllGenres(), bdgGenres, cbxLivresGenres);
