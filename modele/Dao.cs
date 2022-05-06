@@ -394,8 +394,7 @@ namespace Mediatek86.modele
                 BddMySql curs = BddMySql.GetInstance(connectionString);
                 curs.ReqUpdate(req, parameters);
                 return true;
-            }
-            catch (Exception e)
+            }catch (Exception e)
             {
                 Log.Error("Echec lors de la création de la commande/abonnement dans la table commande\nErreur: {0}", e);
                 return false;
