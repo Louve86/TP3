@@ -1895,7 +1895,7 @@ namespace Mediatek86.vue
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void RechercherNumeroCommandeDVD_Click(object sender, EventArgs e)
+        private void btnRechercherNumeroCommandeDVD_Click(object sender, EventArgs e)
         {
             if (!txbDVDNumeroRechercheCommande.Text.Equals(""))
             {
@@ -2582,6 +2582,7 @@ namespace Mediatek86.vue
             InitDataGridViewRechercheRevueCommande(sortedList);
         }
         #endregion
+
 
     }
 }

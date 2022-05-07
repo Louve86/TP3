@@ -36,8 +36,8 @@ namespace Mediatek86.controleur
             lesRayons = Dao.GetAllRayons();
             lesPublics = Dao.GetAllPublics();
             lesSuivis = Dao.GetAllSuivis();
-            ///FrmAuth frmAuth = new FrmAuth(this);
-            ///frmAuth.ShowDialog();
+            FrmAuth frmAuth = new FrmAuth(this);
+            frmAuth.ShowDialog();
         }
 
         /// <summary>

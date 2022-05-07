@@ -383,6 +383,7 @@ namespace Mediatek86.vue
             this.dgvLivresListeGestion.SelectedIndex = 0;
             this.dgvLivresListeGestion.Size = new System.Drawing.Size(883, 659);
             this.dgvLivresListeGestion.TabIndex = 0;
+            this.dgvLivresListeGestion.Enter += new System.EventHandler(this.tabGestionLivres_Enter);
             // 
             // tabLivres
             // 
@@ -750,7 +751,7 @@ namespace Mediatek86.vue
             this.dgvLivresListe.Size = new System.Drawing.Size(844, 200);
             this.dgvLivresListe.TabIndex = 4;
             this.dgvLivresListe.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvLivresListe_ColumnHeaderMouseClick);
-            this.dgvLivresListe.SelectionChanged += new System.EventHandler(this.DgvLivresListe_SelectionChanged);
+            this.dgvLivresListe.SelectionChanged += new System.EventHandler(this.dgvLivresListeCommande_SelectionChanged);
             // 
             // label6
             // 
@@ -1939,6 +1940,7 @@ namespace Mediatek86.vue
             this.tabCommandesLivres.TabIndex = 5;
             this.tabCommandesLivres.Text = "Gestion de Commandes (Livres)";
             this.tabCommandesLivres.UseVisualStyleBackColor = true;
+            this.tabCommandesLivres.Enter += new System.EventHandler(this.tabGestionLivres_Enter);
             // 
             // grpAjoutCLivres
             // 
@@ -1993,8 +1995,8 @@ namespace Mediatek86.vue
             // txbCLivreIdCommande
             // 
             this.txbCLivreIdCommande.Location = new System.Drawing.Point(137, 14);
+            this.txbCLivreIdCommande.MaxLength = 5;
             this.txbCLivreIdCommande.Name = "txbCLivreIdCommande";
-            this.txbCLivreIdCommande.ReadOnly = true;
             this.txbCLivreIdCommande.Size = new System.Drawing.Size(100, 20);
             this.txbCLivreIdCommande.TabIndex = 52;
             // 
@@ -2006,6 +2008,7 @@ namespace Mediatek86.vue
             this.btnCLivreAnnulerCommande.TabIndex = 57;
             this.btnCLivreAnnulerCommande.Text = "Annuler";
             this.btnCLivreAnnulerCommande.UseVisualStyleBackColor = true;
+            this.btnCLivreAnnulerCommande.Click += new System.EventHandler(this.btnAnnulerAjoutCommandLivre_Click);
             // 
             // btnCLivreAjouterCommande
             // 
@@ -2015,6 +2018,7 @@ namespace Mediatek86.vue
             this.btnCLivreAjouterCommande.TabIndex = 7;
             this.btnCLivreAjouterCommande.Text = "Ajouter";
             this.btnCLivreAjouterCommande.UseVisualStyleBackColor = true;
+            this.btnCLivreAjouterCommande.Click += new System.EventHandler(this.btnAjoutCompleteLivres_Click);
             // 
             // label71
             // 
@@ -2117,6 +2121,7 @@ namespace Mediatek86.vue
             this.btnModifierSuivi.TabIndex = 63;
             this.btnModifierSuivi.Text = "Modifier";
             this.btnModifierSuivi.UseVisualStyleBackColor = true;
+            this.btnModifierSuivi.Click += new System.EventHandler(this.btnModifCompleteLivres_Click);
             // 
             // btnAnnulerModifSuivi
             // 
@@ -2126,6 +2131,7 @@ namespace Mediatek86.vue
             this.btnAnnulerModifSuivi.TabIndex = 62;
             this.btnAnnulerModifSuivi.Text = "Annuler";
             this.btnAnnulerModifSuivi.UseVisualStyleBackColor = true;
+            this.btnAnnulerModifSuivi.Click += new System.EventHandler(this.btnAnnulerEditCommandLivre_Click);
             // 
             // txbCLivreIdSuivi
             // 
@@ -2358,6 +2364,7 @@ namespace Mediatek86.vue
             this.btnCLivresSupprimer.TabIndex = 6;
             this.btnCLivresSupprimer.Text = "Supprimer";
             this.btnCLivresSupprimer.UseVisualStyleBackColor = true;
+            this.btnCLivresSupprimer.Click += new System.EventHandler(this.btnSupprimerCommandeLivres_Click);
             // 
             // btnCLivresModifier
             // 
@@ -2367,15 +2374,18 @@ namespace Mediatek86.vue
             this.btnCLivresModifier.TabIndex = 5;
             this.btnCLivresModifier.Text = "Modifier";
             this.btnCLivresModifier.UseVisualStyleBackColor = true;
+            this.btnCLivresModifier.Click += new System.EventHandler(this.btnModifierCommandeLivres_Click);
             // 
             // btnCLivresAjouter
             // 
+            this.btnCLivresAjouter.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnCLivresAjouter.Location = new System.Drawing.Point(616, 11);
             this.btnCLivresAjouter.Name = "btnCLivresAjouter";
             this.btnCLivresAjouter.Size = new System.Drawing.Size(75, 23);
             this.btnCLivresAjouter.TabIndex = 4;
             this.btnCLivresAjouter.Text = "Ajouter";
             this.btnCLivresAjouter.UseVisualStyleBackColor = true;
+            this.btnCLivresAjouter.Click += new System.EventHandler(this.btnAjoutCommandeLivres_Click);
             // 
             // btnCLivresRecherche
             // 
@@ -2385,6 +2395,7 @@ namespace Mediatek86.vue
             this.btnCLivresRecherche.TabIndex = 3;
             this.btnCLivresRecherche.Text = "Rechercher";
             this.btnCLivresRecherche.UseVisualStyleBackColor = true;
+            this.btnCLivresRecherche.Click += new System.EventHandler(this.RechercherNumeroCommandeLivre_Click);
             // 
             // txbCLivresRecherche
             // 
@@ -2404,11 +2415,20 @@ namespace Mediatek86.vue
             // 
             // dgvLivresListeCommande
             // 
+            this.dgvLivresListeCommande.AllowUserToAddRows = false;
+            this.dgvLivresListeCommande.AllowUserToDeleteRows = false;
+            this.dgvLivresListeCommande.AllowUserToResizeColumns = false;
+            this.dgvLivresListeCommande.AllowUserToResizeRows = false;
             this.dgvLivresListeCommande.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLivresListeCommande.Location = new System.Drawing.Point(6, 41);
+            this.dgvLivresListeCommande.MultiSelect = false;
             this.dgvLivresListeCommande.Name = "dgvLivresListeCommande";
+            this.dgvLivresListeCommande.ReadOnly = true;
+            this.dgvLivresListeCommande.RowHeadersVisible = false;
             this.dgvLivresListeCommande.Size = new System.Drawing.Size(847, 169);
             this.dgvLivresListeCommande.TabIndex = 0;
+            this.dgvLivresListeCommande.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLivresListeCommande_ColumnHeaderMouseClick);
+            this.dgvLivresListeCommande.SelectionChanged += new System.EventHandler(this.dgvLivresListeCommande_SelectionChanged);
             // 
             // tabCommandesDvd
             // 
@@ -2422,6 +2442,7 @@ namespace Mediatek86.vue
             this.tabCommandesDvd.TabIndex = 6;
             this.tabCommandesDvd.Text = "Gestion de Commandes (Dvd)";
             this.tabCommandesDvd.UseVisualStyleBackColor = true;
+            this.tabCommandesDvd.Enter += new System.EventHandler(this.tabGestionCmdDvd_Enter);
             // 
             // grpModifCommandeDVD
             // 
@@ -2446,6 +2467,7 @@ namespace Mediatek86.vue
             this.btnAnnulerEditCommandDVD.TabIndex = 48;
             this.btnAnnulerEditCommandDVD.Text = "Annuler";
             this.btnAnnulerEditCommandDVD.UseVisualStyleBackColor = true;
+            this.btnAnnulerEditCommandDVD.Click += new System.EventHandler(this.btnAnnulerEditCommandDVD_Click);
             // 
             // btnModifCompleteDVD
             // 
@@ -2455,6 +2477,7 @@ namespace Mediatek86.vue
             this.btnModifCompleteDVD.TabIndex = 46;
             this.btnModifCompleteDVD.Text = "Modifier";
             this.btnModifCompleteDVD.UseVisualStyleBackColor = true;
+            this.btnModifCompleteDVD.Click += new System.EventHandler(this.btnModifCompleteDVD_Click);
             // 
             // cbxSuiviDVDCommande
             // 
@@ -2522,6 +2545,7 @@ namespace Mediatek86.vue
             this.btnAnnulerAjoutCommandDVD.TabIndex = 46;
             this.btnAnnulerAjoutCommandDVD.Text = "Annuler";
             this.btnAnnulerAjoutCommandDVD.UseVisualStyleBackColor = true;
+            this.btnAnnulerAjoutCommandDVD.Click += new System.EventHandler(this.btnAnnulerAjoutCommandDVD_Click);
             // 
             // btnAjoutCompleteDVD
             // 
@@ -2531,6 +2555,7 @@ namespace Mediatek86.vue
             this.btnAjoutCompleteDVD.TabIndex = 45;
             this.btnAjoutCompleteDVD.Text = "Ajouter";
             this.btnAjoutCompleteDVD.UseVisualStyleBackColor = true;
+            this.btnAjoutCompleteDVD.Click += new System.EventHandler(this.btnAjoutCompleteDVD_Click);
             // 
             // nbMontantDVDCommande
             // 
@@ -2643,6 +2668,7 @@ namespace Mediatek86.vue
             this.btnAjoutCommandeDVD.TabIndex = 50;
             this.btnAjoutCommandeDVD.Text = "Ajouter";
             this.btnAjoutCommandeDVD.UseVisualStyleBackColor = true;
+            this.btnAjoutCommandeDVD.Click += new System.EventHandler(this.btnAjoutCommandeDVD_Click);
             // 
             // btnModifierCommandeDVD
             // 
@@ -2652,6 +2678,7 @@ namespace Mediatek86.vue
             this.btnModifierCommandeDVD.TabIndex = 49;
             this.btnModifierCommandeDVD.Text = "Modifier";
             this.btnModifierCommandeDVD.UseVisualStyleBackColor = true;
+            this.btnModifierCommandeDVD.Click += new System.EventHandler(this.btnModifierCommandeDVD_Click);
             // 
             // btnSupprimerCommandeDVD
             // 
@@ -2661,6 +2688,7 @@ namespace Mediatek86.vue
             this.btnSupprimerCommandeDVD.TabIndex = 48;
             this.btnSupprimerCommandeDVD.Text = "Supprimer";
             this.btnSupprimerCommandeDVD.UseVisualStyleBackColor = true;
+            this.btnSupprimerCommandeDVD.Click += new System.EventHandler(this.btnSupprimerCommandeDVD_Click);
             // 
             // RechercherNumeroCommandeDVD
             // 
@@ -2671,6 +2699,7 @@ namespace Mediatek86.vue
             this.RechercherNumeroCommandeDVD.TabIndex = 14;
             this.RechercherNumeroCommandeDVD.Text = "Rechercher";
             this.RechercherNumeroCommandeDVD.UseVisualStyleBackColor = true;
+            this.RechercherNumeroCommandeDVD.Click += new System.EventHandler(this.btnRechercherNumeroCommandeDVD_Click);
             // 
             // label81
             // 
@@ -2706,6 +2735,8 @@ namespace Mediatek86.vue
             this.dgvDVDListeCommande.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDVDListeCommande.Size = new System.Drawing.Size(844, 200);
             this.dgvDVDListeCommande.TabIndex = 4;
+            this.dgvDVDListeCommande.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvDVDListeCommande_ColumnHeaderMouseClick);
+            this.dgvDVDListeCommande.SelectionChanged += new System.EventHandler(this.dgvDVDListeCommande_SelectionChanged);
             // 
             // groupBox6
             // 
@@ -2920,6 +2951,7 @@ namespace Mediatek86.vue
             this.tabCommandesRevues.TabIndex = 7;
             this.tabCommandesRevues.Text = "Gestion de Commandes (Revues)";
             this.tabCommandesRevues.UseVisualStyleBackColor = true;
+            this.tabCommandesRevues.Enter += new System.EventHandler(this.tabGestionCmdRevues_Enter);
             // 
             // grpAjtAbonnement
             // 
@@ -2993,6 +3025,7 @@ namespace Mediatek86.vue
             this.btnAjtFiniRevue.TabIndex = 45;
             this.btnAjtFiniRevue.Text = "Ajouter";
             this.btnAjtFiniRevue.UseVisualStyleBackColor = true;
+            this.btnAjtFiniRevue.Click += new System.EventHandler(this.btnAjtFiniRevue_Click);
             // 
             // cbxRevue
             // 
@@ -3061,6 +3094,7 @@ namespace Mediatek86.vue
             this.groupBox8.TabIndex = 43;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Recherches";
+            this.groupBox8.Enter += new System.EventHandler(this.tabGestionCmdRevues_Enter);
             // 
             // btnAjtRevue
             // 
@@ -3070,6 +3104,7 @@ namespace Mediatek86.vue
             this.btnAjtRevue.TabIndex = 50;
             this.btnAjtRevue.Text = "Ajouter";
             this.btnAjtRevue.UseVisualStyleBackColor = true;
+            this.btnAjtRevue.Click += new System.EventHandler(this.btnAjtRevue_Click);
             // 
             // btnSupprRevue
             // 
@@ -3079,6 +3114,7 @@ namespace Mediatek86.vue
             this.btnSupprRevue.TabIndex = 48;
             this.btnSupprRevue.Text = "Supprimer";
             this.btnSupprRevue.UseVisualStyleBackColor = true;
+            this.btnSupprRevue.Click += new System.EventHandler(this.btnSupprRevue_Click);
             // 
             // btnRechercheRevue
             // 
@@ -3089,6 +3125,7 @@ namespace Mediatek86.vue
             this.btnRechercheRevue.TabIndex = 14;
             this.btnRechercheRevue.Text = "Rechercher";
             this.btnRechercheRevue.UseVisualStyleBackColor = true;
+            this.btnRechercheRevue.Click += new System.EventHandler(this.btnRechercheRevue_Click);
             // 
             // label107
             // 
@@ -3124,6 +3161,8 @@ namespace Mediatek86.vue
             this.dgvRevues.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvRevues.Size = new System.Drawing.Size(844, 200);
             this.dgvRevues.TabIndex = 4;
+            this.dgvRevues.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvRevues_ColumnHeaderMouseClick);
+            this.dgvRevues.SelectionChanged += new System.EventHandler(this.dgvRevues_SelectionChanged);
             // 
             // groupBox3
             // 

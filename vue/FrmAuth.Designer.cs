@@ -84,6 +84,7 @@ namespace Mediatek86.vue
             this.btnconnexion.TabIndex = 5;
             this.btnconnexion.Text = "Se connecter";
             this.btnconnexion.UseVisualStyleBackColor = true;
+            this.btnconnexion.Click += new System.EventHandler(this.btnConnexion_Click);
             // 
             // FrmAuth
             // 

@@ -644,7 +644,7 @@ namespace Mediatek86.modele
             {
                 try
                 {
-                    string req = "SELECT abonnementsEnDessousTrentreJours() AS string;";
+                    string req = "SELECT abonnementsEnDessousTrenteJours() AS string;";
                     BddMySql curs = BddMySql.GetInstance(connectionString);
                     curs.ReqSelect(req, null);
                     string procedure = "";
