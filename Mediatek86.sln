@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mediatek86", "Mediatek86.csproj", "{810296AE-B290-4E67-A945-19806086CAFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestsUnitaires", "UnitTestProject1\TestsUnitaires.csproj", "{22D4C48F-91F6-4E6E-80EC-6C85880DF272}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mediatek86testsfinal", "mediatek86testsfinal\mediatek86testsfinal.csproj", "{A313A28F-0942-4CDB-BE10-790C26D457A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{810296AE-B290-4E67-A945-19806086CAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810296AE-B290-4E67-A945-19806086CAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810296AE-B290-4E67-A945-19806086CAFE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22D4C48F-91F6-4E6E-80EC-6C85880DF272}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22D4C48F-91F6-4E6E-80EC-6C85880DF272}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22D4C48F-91F6-4E6E-80EC-6C85880DF272}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22D4C48F-91F6-4E6E-80EC-6C85880DF272}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A313A28F-0942-4CDB-BE10-790C26D457A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A313A28F-0942-4CDB-BE10-790C26D457A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A313A28F-0942-4CDB-BE10-790C26D457A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A313A28F-0942-4CDB-BE10-790C26D457A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
